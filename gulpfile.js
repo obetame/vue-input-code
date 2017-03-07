@@ -59,7 +59,7 @@ gulp.task('sass:watch', function() {
 });
 
 gulp.task('start', ['sass'], function() {
-	return gulp.src('./src/inputcode.vue')
+	return gulp.src('./src/index.js')
 		.pipe(webpack({
 			watch: true,
 			output: {
