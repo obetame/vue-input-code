@@ -59,7 +59,7 @@ gulp.task('sass:watch', function() {
 });
 
 gulp.task('start', ['sass'], function() {
-	return gulp.src('./index.js')
+	return gulp.src('./src/inputcode.vue')
 		.pipe(webpack({
 			watch: true,
 			output: {
@@ -73,7 +73,7 @@ gulp.task('start', ['sass'], function() {
 				}
 			},
 		}))
-		// .pipe(uglify())//生产的时候再启用压缩
+		.pipe(uglify())//生产的时候再启用压缩
 		.pipe(gulp.dest('dist/'))
 		.pipe(notify("<%= file.relative %> 成功生成!"));
 });
@@ -93,7 +93,6 @@ gulp.task('example', ['sass'], function() {
 				}
 			},
 		}))
-		// .pipe(uglify())//生产的时候再启用压缩
 		.pipe(gulp.dest('example/'))
 		.pipe(notify("<%= file.relative %> 成功生成!"));
 });
