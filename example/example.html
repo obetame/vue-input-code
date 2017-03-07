@@ -8,12 +8,39 @@
   <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
   <META HTTP-EQUIV="Expires" CONTENT="0">
   <title>验证码输入组件</title>
+  <style type="text/css">
+    header{
+      height: 50px;
+      background-color: #f35252;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 0;
+      margin: 0;
+      text-align: center;
+    }
+    header>span {
+      height: 50px;
+      line-height: 50px;
+      color: white;
+      font-size: 18px;
+      font-weight: 900;
+      display: inline-block;
+    }
+    #app{
+      padding-top:70px;
+    }
+  </style>
 </head>
 
 <body>
+  <header class="header"><span>验证码输入</span></header>
 	<div id="app">
-		<vue-input-code :code="code" :success="success"></vue-input-code>
-    <p>{{code}}</p>
+		<vue-input-code :code="code" :getinput="getInput" :success="success"></vue-input-code>
+    <p style="color:#c8c8c8;text-align: center;">输入完成后回调:{{codeString}}</p>
+    <p style="color:#c8c8c8;text-align: center;">每次输入后回调:{{input}}</p>
 	</div>
   <script type="text/javascript" src="../example/VueInputCode.js"></script>
 </body>

@@ -13,8 +13,8 @@
         align-items: center; }
     #vue_input_code .input > div {
       width: 16.6666%;
-      height: 50px;
-      line-height: 50px;
+      height: 40px;
+      line-height: 40px;
       border: 1px solid #323232;
       font-weight: 900;
       background-color: white; }
@@ -47,8 +47,8 @@
           align-items: center; }
     #vue_input_code .input > span {
       width: 16.66667%;
-      height: 50px;
-      line-height: 50px;
+      height: 40px;
+      line-height: 40px;
       border: 1px solid #323232;
       font-weight: 900;
       background-color: white;

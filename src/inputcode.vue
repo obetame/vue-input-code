@@ -28,6 +28,10 @@ export default {
 			type:Function,
 			default:function(){}
 		},//用户输入完成后的回调
+		getinput:{
+			type:Function,
+			default:function(){}
+		},//每次输入都回调
 	},
 	data () {
 		return {
@@ -86,13 +90,16 @@ export default {
 					this.inputCodeNum++;
 					let n = 16.5666*this.inputCodeNum
 					this.left = n+"%";
+
+					this.getinput(this.codeString);//回调
 				}
 				else{
 					if(this.inputCodeNum===5){
 						this.inputCodeNum++;
 						this.codeArray.push(code);
 						this.code.push(code);
-						this.success(this.codeString);
+						this.success(this.codeString);//输入完成后回调
+						this.getinput(this.codeString);//回调
 					}
 				}
 			}

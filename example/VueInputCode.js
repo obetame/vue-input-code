@@ -61,13 +61,18 @@
 	new _vue2.default({
 		el: "#app",
 		data: {
-			code: []
+			code: [],
+			codeString: "",
+			input: ""
 		},
 		created: function created() {},
 
 		methods: {
 			success: function success(code) {
-				console.log(code);
+				this.codeString = code;
+			},
+			getInput: function getInput(code) {
+				this.input = code;
 			}
 		},
 		components: {
@@ -9751,6 +9756,10 @@
 			success: {
 				type: Function,
 				default: function _default() {}
+			}, //用户输入完成后的回调
+			getinput: {
+				type: Function,
+				default: function _default() {}
 			} },
 		data: function data() {
 			return {
@@ -9804,12 +9813,15 @@
 						this.inputCodeNum++;
 						var n = 16.5666 * this.inputCodeNum;
 						this.left = n + "%";
+
+						this.getinput(this.codeString); //回调
 					} else {
 						if (this.inputCodeNum === 5) {
 							this.inputCodeNum++;
 							this.codeArray.push(code);
 							this.code.push(code);
-							this.success(this.codeString);
+							this.success(this.codeString); //输入完成后回调
+							this.getinput(this.codeString); //回调
 						}
 					}
 				}
@@ -9926,7 +9938,7 @@
 
 
 	// module
-	exports.push([module.id, "#vue_input_code {\n  width: 100%; }\n  #vue_input_code .input {\n    width: 100%;\n    position: relative;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-direction: row;\n        flex-direction: row;\n    -ms-flex-pack: center;\n        justify-content: center;\n    -ms-flex-align: center;\n        align-items: center; }\n    #vue_input_code .input > div {\n      width: 16.6666%;\n      height: 50px;\n      line-height: 50px;\n      border: 1px solid #323232;\n      font-weight: 900;\n      background-color: white; }\n      #vue_input_code .input > div:nth-child(n) {\n        border-right: none; }\n      #vue_input_code .input > div:last-child {\n        border-top-right-radius: 5px;\n        border-bottom-right-radius: 5px;\n        border-right: 1px solid #323232; }\n      #vue_input_code .input > div input {\n        font-size: 20px;\n        width: 90%;\n        color: #323232;\n        text-align: center;\n        outline: none;\n        border: none; }\n    #vue_input_code .input .input-code {\n      position: absolute;\n      top: 0;\n      left: 0;\n      width: 16.66667%;\n      border-right: 1px solid #333333 !important;\n      display: -ms-flexbox;\n      display: flex;\n      -ms-flex-direction: row;\n          flex-direction: row;\n      -ms-flex-pack: center;\n          justify-content: center;\n      -ms-flex-align: center;\n          align-items: center; }\n    #vue_input_code .input > span {\n      width: 16.66667%;\n      height: 50px;\n      line-height: 50px;\n      border: 1px solid #323232;\n      font-weight: 900;\n      background-color: white;\n      display: inline-block;\n      text-align: center;\n      font-size: 20px; }\n      #vue_input_code .input > span:nth-child(n) {\n        border-right: none; }\n      #vue_input_code .input > span:first-child {\n        border-top-left-radius: 5px;\n        border-bottom-left-radius: 5px; }\n      #vue_input_code .input > span:last-child {\n        border-top-right-radius: 5px;\n        border-bottom-right-radius: 5px;\n        border-right: 1px solid #323232; }\n    #vue_input_code .input > span.first {\n      border-top-left-radius: 5px;\n      border-bottom-left-radius: 5px; }\n    #vue_input_code .input .input-code.first {\n      border-top-left-radius: 5px;\n      border-bottom-left-radius: 5px; }\n    #vue_input_code .input .input-code.last {\n      border-top-right-radius: 5px;\n      border-bottom-right-radius: 5px; }\n", ""]);
+	exports.push([module.id, "#vue_input_code {\n  width: 100%; }\n  #vue_input_code .input {\n    width: 100%;\n    position: relative;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-direction: row;\n        flex-direction: row;\n    -ms-flex-pack: center;\n        justify-content: center;\n    -ms-flex-align: center;\n        align-items: center; }\n    #vue_input_code .input > div {\n      width: 16.6666%;\n      height: 40px;\n      line-height: 40px;\n      border: 1px solid #323232;\n      font-weight: 900;\n      background-color: white; }\n      #vue_input_code .input > div:nth-child(n) {\n        border-right: none; }\n      #vue_input_code .input > div:last-child {\n        border-top-right-radius: 5px;\n        border-bottom-right-radius: 5px;\n        border-right: 1px solid #323232; }\n      #vue_input_code .input > div input {\n        font-size: 20px;\n        width: 90%;\n        color: #323232;\n        text-align: center;\n        outline: none;\n        border: none; }\n    #vue_input_code .input .input-code {\n      position: absolute;\n      top: 0;\n      left: 0;\n      width: 16.66667%;\n      border-right: 1px solid #333333 !important;\n      display: -ms-flexbox;\n      display: flex;\n      -ms-flex-direction: row;\n          flex-direction: row;\n      -ms-flex-pack: center;\n          justify-content: center;\n      -ms-flex-align: center;\n          align-items: center; }\n    #vue_input_code .input > span {\n      width: 16.66667%;\n      height: 40px;\n      line-height: 40px;\n      border: 1px solid #323232;\n      font-weight: 900;\n      background-color: white;\n      display: inline-block;\n      text-align: center;\n      font-size: 20px; }\n      #vue_input_code .input > span:nth-child(n) {\n        border-right: none; }\n      #vue_input_code .input > span:first-child {\n        border-top-left-radius: 5px;\n        border-bottom-left-radius: 5px; }\n      #vue_input_code .input > span:last-child {\n        border-top-right-radius: 5px;\n        border-bottom-right-radius: 5px;\n        border-right: 1px solid #323232; }\n    #vue_input_code .input > span.first {\n      border-top-left-radius: 5px;\n      border-bottom-left-radius: 5px; }\n    #vue_input_code .input .input-code.first {\n      border-top-left-radius: 5px;\n      border-bottom-left-radius: 5px; }\n    #vue_input_code .input .input-code.last {\n      border-top-right-radius: 5px;\n      border-bottom-right-radius: 5px; }\n", ""]);
 
 	// exports
 

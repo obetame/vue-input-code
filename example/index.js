@@ -5,14 +5,19 @@ import VueInputCode from '../src/inputcode.vue';
 new Vue({
 	el:"#app",
 	data:{
-		code:[]
+		code:[],
+		codeString:"",
+		input:""
 	},
 	created(){
 		
 	},
 	methods:{
 		success(code){
-			console.log(code)
+			this.codeString = code;
+		},
+		getInput(code){
+			this.input = code;
 		}
 	},
 	components:{
