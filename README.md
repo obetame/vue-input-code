@@ -27,7 +27,7 @@ npm install vue-input-code --save
 //在项目入口文件
 import Vue from 'vue'
 import VueInputCode from 'vue-input-code'
-Vue.component('VueInputCode', VueImgInputer)
+Vue.component('VueInputCode', VueInputCode)
 ```
 
 - 作为局部组件
