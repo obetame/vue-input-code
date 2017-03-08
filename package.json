@@ -1,6 +1,6 @@
 {
   "name": "vue-input-code",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "基于vue2.0的验证码输入组件",
   "main": "src/inputcode.vue",
   "directories": {

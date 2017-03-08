@@ -8,6 +8,10 @@
 
 + 输入回调
 + 完成回调
++ 自定义验证码个数
++ 样式可控
+
+[这里是可爱的Demo](https://quietboys.github.io/vue-input-code/)
 
 ## 支持
 
