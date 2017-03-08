@@ -40,8 +40,9 @@
 /******/ 	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -50,7 +51,7 @@
 
 	var _vue2 = _interopRequireDefault(_vue);
 
-	var _inputcode = __webpack_require__(2);
+	var _inputcode = __webpack_require__(77);
 
 	var _inputcode2 = _interopRequireDefault(_inputcode);
 
@@ -81,7 +82,8 @@
 	});
 
 /***/ },
-/* 1 */
+
+/***/ 1:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/*!
@@ -9263,18 +9265,19 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 2 */
+
+/***/ 77:
 /***/ function(module, exports, __webpack_require__) {
 
 	
 	/* styles */
-	__webpack_require__(3)
+	__webpack_require__(78)
 
-	var Component = __webpack_require__(8)(
+	var Component = __webpack_require__(84)(
 	  /* script */
-	  __webpack_require__(9),
+	  __webpack_require__(85),
 	  /* template */
-	  __webpack_require__(10),
+	  __webpack_require__(86),
 	  /* scopeId */
 	  null,
 	  /* cssModules */
@@ -9301,17 +9304,18 @@
 
 
 /***/ },
-/* 3 */
+
+/***/ 78:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(4);
+	var content = __webpack_require__(79);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(6)("cec73cd0", content, false);
+	var update = __webpack_require__(82)("cec73cd0", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
@@ -9327,12 +9331,13 @@
 	}
 
 /***/ },
-/* 4 */
+
+/***/ 79:
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(5)();
+	exports = module.exports = __webpack_require__(80)();
 	// imports
-	exports.i(__webpack_require__(11), "");
+	exports.i(__webpack_require__(81), "");
 
 	// module
 	exports.push([module.id, "\n", ""]);
@@ -9341,7 +9346,8 @@
 
 
 /***/ },
-/* 5 */
+
+/***/ 80:
 /***/ function(module, exports) {
 
 	/*
@@ -9397,7 +9403,23 @@
 
 
 /***/ },
-/* 6 */
+
+/***/ 81:
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(80)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "#vue_input_code {\n  width: 100%; }\n  #vue_input_code .input {\n    width: 100%;\n    position: relative;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-direction: row;\n        flex-direction: row;\n    -ms-flex-pack: center;\n        justify-content: center;\n    -ms-flex-align: center;\n        align-items: center; }\n    #vue_input_code .input > div {\n      width: 16.6666%;\n      height: 40px;\n      line-height: 40px;\n      border: 1px solid #323232;\n      font-weight: 900;\n      background-color: white; }\n      #vue_input_code .input > div:nth-child(n) {\n        border-right: none; }\n      #vue_input_code .input > div:last-child {\n        border-top-right-radius: 5px;\n        border-bottom-right-radius: 5px;\n        border-right: 1px solid #323232; }\n      #vue_input_code .input > div input {\n        font-size: 20px;\n        width: 90%;\n        color: #323232;\n        text-align: center;\n        outline: none;\n        border: none; }\n    #vue_input_code .input .input-code {\n      position: absolute;\n      top: 0;\n      left: 0;\n      width: 16.66667%;\n      border-right: 1px solid #333333 !important;\n      display: -ms-flexbox;\n      display: flex;\n      -ms-flex-direction: row;\n          flex-direction: row;\n      -ms-flex-pack: center;\n          justify-content: center;\n      -ms-flex-align: center;\n          align-items: center; }\n    #vue_input_code .input > span {\n      width: 16.66667%;\n      height: 40px;\n      line-height: 40px;\n      border: 1px solid #323232;\n      font-weight: 900;\n      background-color: white;\n      display: inline-block;\n      text-align: center;\n      font-size: 20px; }\n      #vue_input_code .input > span:nth-child(n) {\n        border-right: none; }\n      #vue_input_code .input > span:first-child {\n        border-top-left-radius: 5px;\n        border-bottom-left-radius: 5px; }\n      #vue_input_code .input > span:last-child {\n        border-top-right-radius: 5px;\n        border-bottom-right-radius: 5px;\n        border-right: 1px solid #323232; }\n    #vue_input_code .input > span.first {\n      border-top-left-radius: 5px;\n      border-bottom-left-radius: 5px; }\n    #vue_input_code .input .input-code.first {\n      border-top-left-radius: 5px;\n      border-bottom-left-radius: 5px; }\n    #vue_input_code .input .input-code.last {\n      border-top-right-radius: 5px;\n      border-bottom-right-radius: 5px; }\n", ""]);
+
+	// exports
+
+
+/***/ },
+
+/***/ 82:
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -9416,7 +9438,7 @@
 	  ) }
 	}
 
-	var listToStyles = __webpack_require__(7)
+	var listToStyles = __webpack_require__(83)
 
 	/*
 	type StyleObject = {
@@ -9633,7 +9655,8 @@
 
 
 /***/ },
-/* 7 */
+
+/***/ 83:
 /***/ function(module, exports) {
 
 	/**
@@ -9666,7 +9689,8 @@
 
 
 /***/ },
-/* 8 */
+
+/***/ 84:
 /***/ function(module, exports) {
 
 	module.exports = function normalizeComponent (
@@ -9719,7 +9743,8 @@
 
 
 /***/ },
-/* 9 */
+
+/***/ 85:
 /***/ function(module, exports) {
 
 	"use strict";
@@ -9830,7 +9855,8 @@
 	};
 
 /***/ },
-/* 10 */
+
+/***/ 86:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -9929,19 +9955,6 @@
 	  }
 	}
 
-/***/ },
-/* 11 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(5)();
-	// imports
-
-
-	// module
-	exports.push([module.id, "#vue_input_code {\n  width: 100%; }\n  #vue_input_code .input {\n    width: 100%;\n    position: relative;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-direction: row;\n        flex-direction: row;\n    -ms-flex-pack: center;\n        justify-content: center;\n    -ms-flex-align: center;\n        align-items: center; }\n    #vue_input_code .input > div {\n      width: 16.6666%;\n      height: 40px;\n      line-height: 40px;\n      border: 1px solid #323232;\n      font-weight: 900;\n      background-color: white; }\n      #vue_input_code .input > div:nth-child(n) {\n        border-right: none; }\n      #vue_input_code .input > div:last-child {\n        border-top-right-radius: 5px;\n        border-bottom-right-radius: 5px;\n        border-right: 1px solid #323232; }\n      #vue_input_code .input > div input {\n        font-size: 20px;\n        width: 90%;\n        color: #323232;\n        text-align: center;\n        outline: none;\n        border: none; }\n    #vue_input_code .input .input-code {\n      position: absolute;\n      top: 0;\n      left: 0;\n      width: 16.66667%;\n      border-right: 1px solid #333333 !important;\n      display: -ms-flexbox;\n      display: flex;\n      -ms-flex-direction: row;\n          flex-direction: row;\n      -ms-flex-pack: center;\n          justify-content: center;\n      -ms-flex-align: center;\n          align-items: center; }\n    #vue_input_code .input > span {\n      width: 16.66667%;\n      height: 40px;\n      line-height: 40px;\n      border: 1px solid #323232;\n      font-weight: 900;\n      background-color: white;\n      display: inline-block;\n      text-align: center;\n      font-size: 20px; }\n      #vue_input_code .input > span:nth-child(n) {\n        border-right: none; }\n      #vue_input_code .input > span:first-child {\n        border-top-left-radius: 5px;\n        border-bottom-left-radius: 5px; }\n      #vue_input_code .input > span:last-child {\n        border-top-right-radius: 5px;\n        border-bottom-right-radius: 5px;\n        border-right: 1px solid #323232; }\n    #vue_input_code .input > span.first {\n      border-top-left-radius: 5px;\n      border-bottom-left-radius: 5px; }\n    #vue_input_code .input .input-code.first {\n      border-top-left-radius: 5px;\n      border-bottom-left-radius: 5px; }\n    #vue_input_code .input .input-code.last {\n      border-top-right-radius: 5px;\n      border-bottom-right-radius: 5px; }\n", ""]);
-
-	// exports
-
-
 /***/ }
-/******/ ]);
+
+/******/ });

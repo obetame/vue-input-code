@@ -1,5 +1,5 @@
 module.exports = {
-    entry: './example/index.js',
+    entry: './src/index.js',
     output: {
         library: 'VueInputCode',
         libraryTarget: 'umd',
