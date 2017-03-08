@@ -109,5 +109,5 @@ export default {
 </script>
 
 <style lang="css">
-@import "../dist/inputcode.css";
+@import "./dist/inputcode.css";
 </style>
