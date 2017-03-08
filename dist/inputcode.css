@@ -27,7 +27,8 @@
         color: #323232;
         text-align: center;
         outline: none;
-        border: none; }
+        border: none;
+        margin-right: 5px; }
     #vue_input_code .input .input-code {
       position: absolute;
       top: 0;

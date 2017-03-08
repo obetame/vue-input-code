@@ -13,8 +13,6 @@
 
 支持 Vue.js 2.0+.
 
-不支持 Vue.js 1.x.
-
 ## 安装和使用
 
 ```javascript
@@ -45,7 +43,7 @@ export default {
 HTML中使用:
 
 ```html
-<vue-input-code :code="code" :getinput="getInput" :success="success"></vue-input-code>
+<vue-input-code span-size="20px" type="number" :number="5" height="50px" span-color="#f35252" input-color="#3498db" input-size="24px" :code="code" :getinput="getInput" :success="success"></vue-input-code>
 ```
 
 ## API
@@ -55,5 +53,12 @@ HTML中使用:
 | 参数    | 类型    | 说明   |  可选值 | 默认值 |
 | ------------- |-------| -----| ----| -------|
 | code | 数组 | 用户输入的验证码数组 | — | — |
-| getinput | 函数 | 用户每次输入后的回调函数,接受一个字符串 | — | — |
-| success | 函数 | 用户输入完成后的回调函数,接受一个字符串 | — | — |
+| type | 字符串 | 用户输入类型 | number,text | number |
+| getinput | 函数 | 用户每次输入后的回调函数,接受一个验证码字符串 | — | — |
+| success | 函数 | 用户输入完成后的回调函数,接受一个验证码字符串 | — | — |
+| span-size | 字符串 | 输入后的字体显示大小 | — | 20px |
+| span-color | 字符串 | 输入后的字体显示颜色 | — | #f35252 |
+| input-size | 字符串 | 输入框的字体显示大小 | — | 20px |
+| input-color | 字符串 | 输入框的字体显示颜色 | — | #000 |
+| number | 数字 | 验证码个数 | — | 6 |
+| height | 字符串 | 整个框的显示高度 | — | 60px |

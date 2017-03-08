@@ -2,7 +2,12 @@
 	<div id="vue_input_code">
 		<div class="input" @click="focusInput" :style="{'height':height}">
       <div :class="{'input-code':true,first:inputCodeNum===0,last:inputCodeNum===6}" :style="{left:left,'z-index':zIndex,'height':height,'width':blockSize-1+'%'}">
-        <input ref="input_code" type="tel" :style="{'font-size':inputSize,'color':inputColor}" @keyup="inputCodeEvent($event)" @blur="blurInput" v-model="inputCode" autofocus maxlength="1" @keyup.delete="deleteInput">
+      	<template v-if="type==='number'">
+      		<input ref="input_code" type="tel" :style="{'font-size':inputSize,'color':inputColor}" @keyup="inputCodeEvent($event)" @blur="blurInput" v-model="inputCode" autofocus maxlength="1" @keyup.delete="deleteInput">
+      	</template>
+        <template v-else>
+      		<input ref="input_code" type="text" :style="{'font-size':inputSize,'color':inputColor}" @keyup="inputCodeEvent($event)" @blur="blurInput" v-model="inputCode" autofocus maxlength="1" @keyup.delete="deleteInput">
+      	</template>
       </div>
       <span v-for="(item,index) in block" :style="{'font-size':spanSize,'color':spanColor,'height':height,'line-height':height,'width':blockWidth}" v-text="codeArray[index]?codeArray[index]:''" :class="{'first':index===0,'last':index===number-1}"></span>
       <!-- <span :style="{'font-size':spanSize,'color':spanColor,'height':height,'line-height':height}" v-text="codeArray[1]?codeArray[1]:''"></span>
@@ -58,8 +63,12 @@ export default {
 		},
 		number:{
 			type:Number,
-			default:6
+			default:6,
 		},//验证码个数
+		type:{
+			type:String,
+			default:"number"
+		},//用户输入类型,有number,mix
 	},
 	data () {
 		return {
@@ -100,7 +109,7 @@ export default {
 	methods:{
 		/** 删除输入 */
 		deleteInput(){
-			if(this.inputCodeNum===5){
+			if(this.inputCodeNum===this.number-1){
 				this.inputCodeNum--;
 				let n = this.blockSize*(this.inputCodeNum);
 				this.left = n+"%";
@@ -120,10 +129,10 @@ export default {
 		},
 		/** 每次输入的事件 */
 		inputCodeEvent(event){
-			/** 数字 */
-			if(event.keyCode>=48&&event.keyCode<=57){
+			// 要求输入数字类型
+			if(this.type==="number"&&event.keyCode>=48&&event.keyCode<=57){
 				let code = event.target.value;//code
-				
+					
 				if(this.inputCodeNum<this.number-1){
 					this.codeArray.push(code);
 					this.code.push(code);
@@ -143,11 +152,33 @@ export default {
 						this.getinput(this.codeString);//回调
 					}
 				}
+				return;
 			}
-			/** 字母 */
-			if(event.keyCode>=65&&event.keyCode<=81){
-				this.error();//调用用户的错误处理函数
-				this.inputCode = "";
+			
+			/** 输入字母和数字类型 */
+			if(this.type==="text"&&(event.keyCode>=65&&event.keyCode<=81||event.keyCode>=48&&event.keyCode<=57)){
+				// event.keyCode>=65&&event.keyCode<=81
+				let code = event.target.value;//code
+					
+				if(this.inputCodeNum<this.number-1){
+					this.codeArray.push(code);
+					this.code.push(code);
+					this.inputCode = "";
+					this.inputCodeNum++;
+					let n = this.blockSize*this.inputCodeNum
+					this.left = n+"%";
+
+					this.getinput(this.codeString);//回调
+				}
+				else{
+					if(this.inputCodeNum===this.number-1){
+						this.inputCodeNum++;
+						this.codeArray.push(code);
+						this.code.push(code);
+						this.success(this.codeString);//输入完成后回调
+						this.getinput(this.codeString);//回调
+					}
+				}
 			}
 		},
 		/** 失去焦点 */

@@ -9408,7 +9408,7 @@
 
 
 	// module
-	exports.push([module.id, "#vue_input_code {\n  width: 100%; }\n  #vue_input_code .input {\n    width: 100%;\n    position: relative;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-direction: row;\n        flex-direction: row;\n    -ms-flex-pack: center;\n        justify-content: center;\n    -ms-flex-align: center;\n        align-items: center; }\n    #vue_input_code .input > div {\n      border: 1px solid #323232;\n      font-weight: 900;\n      background-color: white; }\n      #vue_input_code .input > div:nth-child(n) {\n        border-right: none; }\n      #vue_input_code .input > div:last-child {\n        border-top-right-radius: 5px;\n        border-bottom-right-radius: 5px;\n        border-right: 1px solid #323232; }\n      #vue_input_code .input > div input {\n        font-size: 20px;\n        width: 90%;\n        color: #323232;\n        text-align: center;\n        outline: none;\n        border: none; }\n    #vue_input_code .input .input-code {\n      position: absolute;\n      top: 0;\n      left: 0;\n      margin-left: 1%;\n      border: none;\n      background: none;\n      display: -ms-flexbox;\n      display: flex;\n      -ms-flex-direction: row;\n          flex-direction: row;\n      -ms-flex-pack: center;\n          justify-content: center;\n      -ms-flex-align: center;\n          align-items: center; }\n    #vue_input_code .input > span {\n      border: 1px solid #323232;\n      font-weight: 900;\n      background-color: white;\n      display: inline-block;\n      text-align: center;\n      font-size: 20px; }\n      #vue_input_code .input > span:nth-child(n) {\n        border-right: none; }\n      #vue_input_code .input > span:first-child {\n        border-top-left-radius: 5px;\n        border-bottom-left-radius: 5px; }\n      #vue_input_code .input > span:last-child {\n        border-top-right-radius: 5px;\n        border-bottom-right-radius: 5px;\n        border-right: 1px solid #323232; }\n    #vue_input_code .input > span.first {\n      border-top-left-radius: 5px;\n      border-bottom-left-radius: 5px; }\n    #vue_input_code .input .input-code.first {\n      border-top-left-radius: 5px;\n      border-bottom-left-radius: 5px; }\n    #vue_input_code .input .input-code.last {\n      border-top-right-radius: 5px;\n      border-bottom-right-radius: 5px; }\n", ""]);
+	exports.push([module.id, "#vue_input_code {\n  width: 100%; }\n  #vue_input_code .input {\n    width: 100%;\n    position: relative;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-direction: row;\n        flex-direction: row;\n    -ms-flex-pack: center;\n        justify-content: center;\n    -ms-flex-align: center;\n        align-items: center; }\n    #vue_input_code .input > div {\n      border: 1px solid #323232;\n      font-weight: 900;\n      background-color: white; }\n      #vue_input_code .input > div:nth-child(n) {\n        border-right: none; }\n      #vue_input_code .input > div:last-child {\n        border-top-right-radius: 5px;\n        border-bottom-right-radius: 5px;\n        border-right: 1px solid #323232; }\n      #vue_input_code .input > div input {\n        font-size: 20px;\n        width: 90%;\n        color: #323232;\n        text-align: center;\n        outline: none;\n        border: none;\n        margin-right: 5px; }\n    #vue_input_code .input .input-code {\n      position: absolute;\n      top: 0;\n      left: 0;\n      margin-left: 1%;\n      border: none;\n      background: none;\n      display: -ms-flexbox;\n      display: flex;\n      -ms-flex-direction: row;\n          flex-direction: row;\n      -ms-flex-pack: center;\n          justify-content: center;\n      -ms-flex-align: center;\n          align-items: center; }\n    #vue_input_code .input > span {\n      border: 1px solid #323232;\n      font-weight: 900;\n      background-color: white;\n      display: inline-block;\n      text-align: center;\n      font-size: 20px; }\n      #vue_input_code .input > span:nth-child(n) {\n        border-right: none; }\n      #vue_input_code .input > span:first-child {\n        border-top-left-radius: 5px;\n        border-bottom-left-radius: 5px; }\n      #vue_input_code .input > span:last-child {\n        border-top-right-radius: 5px;\n        border-bottom-right-radius: 5px;\n        border-right: 1px solid #323232; }\n    #vue_input_code .input > span.first {\n      border-top-left-radius: 5px;\n      border-bottom-left-radius: 5px; }\n    #vue_input_code .input .input-code.first {\n      border-top-left-radius: 5px;\n      border-bottom-left-radius: 5px; }\n    #vue_input_code .input .input-code.last {\n      border-top-right-radius: 5px;\n      border-bottom-right-radius: 5px; }\n", ""]);
 
 	// exports
 
@@ -9760,6 +9760,11 @@
 	//
 	//
 	//
+	//
+	//
+	//
+	//
+	//
 
 	exports.default = {
 		props: {
@@ -9805,6 +9810,10 @@
 			number: {
 				type: Number,
 				default: 6
+			}, //验证码个数
+			type: {
+				type: String,
+				default: "number"
 			} },
 		data: function data() {
 			return {
@@ -9841,7 +9850,7 @@
 		methods: {
 			/** 删除输入 */
 			deleteInput: function deleteInput() {
-				if (this.inputCodeNum === 5) {
+				if (this.inputCodeNum === this.number - 1) {
 					this.inputCodeNum--;
 					var n = this.blockSize * this.inputCodeNum;
 					this.left = n + "%";
@@ -9862,8 +9871,8 @@
 
 			/** 每次输入的事件 */
 			inputCodeEvent: function inputCodeEvent(event) {
-				/** 数字 */
-				if (event.keyCode >= 48 && event.keyCode <= 57) {
+				// 要求输入数字类型
+				if (this.type === "number" && event.keyCode >= 48 && event.keyCode <= 57) {
 					var code = event.target.value; //code
 
 					if (this.inputCodeNum < this.number - 1) {
@@ -9884,11 +9893,32 @@
 							this.getinput(this.codeString); //回调
 						}
 					}
+					return;
 				}
-				/** 字母 */
-				if (event.keyCode >= 65 && event.keyCode <= 81) {
-					this.error(); //调用用户的错误处理函数
-					this.inputCode = "";
+
+				/** 输入字母和数字类型 */
+				if (this.type === "text" && (event.keyCode >= 65 && event.keyCode <= 81 || event.keyCode >= 48 && event.keyCode <= 57)) {
+					// event.keyCode>=65&&event.keyCode<=81
+					var _code = event.target.value; //code
+
+					if (this.inputCodeNum < this.number - 1) {
+						this.codeArray.push(_code);
+						this.code.push(_code);
+						this.inputCode = "";
+						this.inputCodeNum++;
+						var _n2 = this.blockSize * this.inputCodeNum;
+						this.left = _n2 + "%";
+
+						this.getinput(this.codeString); //回调
+					} else {
+						if (this.inputCodeNum === this.number - 1) {
+							this.inputCodeNum++;
+							this.codeArray.push(_code);
+							this.code.push(_code);
+							this.success(this.codeString); //输入完成后回调
+							this.getinput(this.codeString); //回调
+						}
+					}
 				}
 			},
 
@@ -9932,7 +9962,7 @@
 	      'height': _vm.height,
 	      'width': _vm.blockSize - 1 + '%'
 	    })
-	  }, [_c('input', {
+	  }, [(_vm.type === 'number') ? [_c('input', {
 	    directives: [{
 	      name: "model",
 	      rawName: "v-model",
@@ -9965,7 +9995,40 @@
 	        _vm.inputCode = $event.target.value
 	      }
 	    }
-	  })]), _vm._v(" "), _vm._l((_vm.block), function(item, index) {
+	  })] : [_c('input', {
+	    directives: [{
+	      name: "model",
+	      rawName: "v-model",
+	      value: (_vm.inputCode),
+	      expression: "inputCode"
+	    }],
+	    ref: "input_code",
+	    style: ({
+	      'font-size': _vm.inputSize,
+	      'color': _vm.inputColor
+	    }),
+	    attrs: {
+	      "type": "text",
+	      "autofocus": "",
+	      "maxlength": "1"
+	    },
+	    domProps: {
+	      "value": (_vm.inputCode)
+	    },
+	    on: {
+	      "keyup": [function($event) {
+	        _vm.inputCodeEvent($event)
+	      }, function($event) {
+	        if (_vm._k($event.keyCode, "delete", [8, 46])) { return null; }
+	        _vm.deleteInput($event)
+	      }],
+	      "blur": _vm.blurInput,
+	      "input": function($event) {
+	        if ($event.target.composing) { return; }
+	        _vm.inputCode = $event.target.value
+	      }
+	    }
+	  })]], 2), _vm._v(" "), _vm._l((_vm.block), function(item, index) {
 	    return _c('span', {
 	      class: {
 	        'first': index === 0, 'last': index === _vm.number - 1
