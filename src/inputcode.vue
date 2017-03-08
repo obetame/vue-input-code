@@ -194,6 +194,6 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
 @import "../dist/inputcode.css";
 </style>
