@@ -38,7 +38,7 @@
 <body>
   <header class="header"><span>验证码输入</span></header>
 	<div id="app">
-		<vue-input-code :code="code" :getinput="getInput" :success="success"></vue-input-code>
+		<vue-input-code span-size="20px" :number="4" height="50px" span-color="#f35252" input-color="#3498db" input-size="24px" :error="error" :code="code" :getinput="getInput" :success="success"></vue-input-code>
     <p style="color:#c8c8c8;text-align: center;">输入完成后回调:{{codeString}}</p>
     <p style="color:#c8c8c8;text-align: center;">每次输入后回调:{{input}}</p>
 	</div>

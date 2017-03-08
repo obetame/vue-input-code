@@ -40,9 +40,8 @@
 /******/ 	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ 0:
+/******/ ([
+/* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -51,7 +50,7 @@
 
 	var _vue2 = _interopRequireDefault(_vue);
 
-	var _inputcode = __webpack_require__(77);
+	var _inputcode = __webpack_require__(2);
 
 	var _inputcode2 = _interopRequireDefault(_inputcode);
 
@@ -74,6 +73,9 @@
 			},
 			getInput: function getInput(code) {
 				this.input = code;
+			},
+			error: function error() {
+				console.log("错误输入");
 			}
 		},
 		components: {
@@ -82,8 +84,7 @@
 	});
 
 /***/ },
-
-/***/ 1:
+/* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/*!
@@ -9265,19 +9266,18 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-
-/***/ 77:
+/* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
 	/* styles */
-	__webpack_require__(78)
+	__webpack_require__(3)
 
-	var Component = __webpack_require__(84)(
+	var Component = __webpack_require__(9)(
 	  /* script */
-	  __webpack_require__(85),
+	  __webpack_require__(10),
 	  /* template */
-	  __webpack_require__(86),
+	  __webpack_require__(11),
 	  /* scopeId */
 	  null,
 	  /* cssModules */
@@ -9304,18 +9304,17 @@
 
 
 /***/ },
-
-/***/ 78:
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(79);
+	var content = __webpack_require__(4);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(82)("cec73cd0", content, false);
+	var update = __webpack_require__(7)("cec73cd0", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
@@ -9331,13 +9330,12 @@
 	}
 
 /***/ },
-
-/***/ 79:
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(80)();
+	exports = module.exports = __webpack_require__(5)();
 	// imports
-	exports.i(__webpack_require__(81), "");
+	exports.i(__webpack_require__(6), "");
 
 	// module
 	exports.push([module.id, "\n", ""]);
@@ -9346,8 +9344,7 @@
 
 
 /***/ },
-
-/***/ 80:
+/* 5 */
 /***/ function(module, exports) {
 
 	/*
@@ -9403,23 +9400,21 @@
 
 
 /***/ },
-
-/***/ 81:
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(80)();
+	exports = module.exports = __webpack_require__(5)();
 	// imports
 
 
 	// module
-	exports.push([module.id, "#vue_input_code {\n  width: 100%; }\n  #vue_input_code .input {\n    width: 100%;\n    position: relative;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-direction: row;\n        flex-direction: row;\n    -ms-flex-pack: center;\n        justify-content: center;\n    -ms-flex-align: center;\n        align-items: center; }\n    #vue_input_code .input > div {\n      width: 16.6666%;\n      height: 40px;\n      line-height: 40px;\n      border: 1px solid #323232;\n      font-weight: 900;\n      background-color: white; }\n      #vue_input_code .input > div:nth-child(n) {\n        border-right: none; }\n      #vue_input_code .input > div:last-child {\n        border-top-right-radius: 5px;\n        border-bottom-right-radius: 5px;\n        border-right: 1px solid #323232; }\n      #vue_input_code .input > div input {\n        font-size: 20px;\n        width: 90%;\n        color: #323232;\n        text-align: center;\n        outline: none;\n        border: none; }\n    #vue_input_code .input .input-code {\n      position: absolute;\n      top: 0;\n      left: 0;\n      width: 16.66667%;\n      border-right: 1px solid #333333 !important;\n      display: -ms-flexbox;\n      display: flex;\n      -ms-flex-direction: row;\n          flex-direction: row;\n      -ms-flex-pack: center;\n          justify-content: center;\n      -ms-flex-align: center;\n          align-items: center; }\n    #vue_input_code .input > span {\n      width: 16.66667%;\n      height: 40px;\n      line-height: 40px;\n      border: 1px solid #323232;\n      font-weight: 900;\n      background-color: white;\n      display: inline-block;\n      text-align: center;\n      font-size: 20px; }\n      #vue_input_code .input > span:nth-child(n) {\n        border-right: none; }\n      #vue_input_code .input > span:first-child {\n        border-top-left-radius: 5px;\n        border-bottom-left-radius: 5px; }\n      #vue_input_code .input > span:last-child {\n        border-top-right-radius: 5px;\n        border-bottom-right-radius: 5px;\n        border-right: 1px solid #323232; }\n    #vue_input_code .input > span.first {\n      border-top-left-radius: 5px;\n      border-bottom-left-radius: 5px; }\n    #vue_input_code .input .input-code.first {\n      border-top-left-radius: 5px;\n      border-bottom-left-radius: 5px; }\n    #vue_input_code .input .input-code.last {\n      border-top-right-radius: 5px;\n      border-bottom-right-radius: 5px; }\n", ""]);
+	exports.push([module.id, "#vue_input_code {\n  width: 100%; }\n  #vue_input_code .input {\n    width: 100%;\n    position: relative;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-direction: row;\n        flex-direction: row;\n    -ms-flex-pack: center;\n        justify-content: center;\n    -ms-flex-align: center;\n        align-items: center; }\n    #vue_input_code .input > div {\n      border: 1px solid #323232;\n      font-weight: 900;\n      background-color: white; }\n      #vue_input_code .input > div:nth-child(n) {\n        border-right: none; }\n      #vue_input_code .input > div:last-child {\n        border-top-right-radius: 5px;\n        border-bottom-right-radius: 5px;\n        border-right: 1px solid #323232; }\n      #vue_input_code .input > div input {\n        font-size: 20px;\n        width: 90%;\n        color: #323232;\n        text-align: center;\n        outline: none;\n        border: none; }\n    #vue_input_code .input .input-code {\n      position: absolute;\n      top: 0;\n      left: 0;\n      margin-left: 1%;\n      border: none;\n      background: none;\n      display: -ms-flexbox;\n      display: flex;\n      -ms-flex-direction: row;\n          flex-direction: row;\n      -ms-flex-pack: center;\n          justify-content: center;\n      -ms-flex-align: center;\n          align-items: center; }\n    #vue_input_code .input > span {\n      border: 1px solid #323232;\n      font-weight: 900;\n      background-color: white;\n      display: inline-block;\n      text-align: center;\n      font-size: 20px; }\n      #vue_input_code .input > span:nth-child(n) {\n        border-right: none; }\n      #vue_input_code .input > span:first-child {\n        border-top-left-radius: 5px;\n        border-bottom-left-radius: 5px; }\n      #vue_input_code .input > span:last-child {\n        border-top-right-radius: 5px;\n        border-bottom-right-radius: 5px;\n        border-right: 1px solid #323232; }\n    #vue_input_code .input > span.first {\n      border-top-left-radius: 5px;\n      border-bottom-left-radius: 5px; }\n    #vue_input_code .input .input-code.first {\n      border-top-left-radius: 5px;\n      border-bottom-left-radius: 5px; }\n    #vue_input_code .input .input-code.last {\n      border-top-right-radius: 5px;\n      border-bottom-right-radius: 5px; }\n", ""]);
 
 	// exports
 
 
 /***/ },
-
-/***/ 82:
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -9438,7 +9433,7 @@
 	  ) }
 	}
 
-	var listToStyles = __webpack_require__(83)
+	var listToStyles = __webpack_require__(8)
 
 	/*
 	type StyleObject = {
@@ -9655,8 +9650,7 @@
 
 
 /***/ },
-
-/***/ 83:
+/* 8 */
 /***/ function(module, exports) {
 
 	/**
@@ -9689,8 +9683,7 @@
 
 
 /***/ },
-
-/***/ 84:
+/* 9 */
 /***/ function(module, exports) {
 
 	module.exports = function normalizeComponent (
@@ -9743,8 +9736,7 @@
 
 
 /***/ },
-
-/***/ 85:
+/* 10 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -9782,18 +9774,58 @@
 				type: Function,
 				default: function _default() {}
 			}, //用户输入完成后的回调
+			error: {
+				type: Function,
+				default: function _default() {}
+			}, //用户输入了不是数字的时候调用的函数
 			getinput: {
 				type: Function,
 				default: function _default() {}
+			}, //每次输入都回调
+			spanSize: {
+				type: String,
+				default: "20px"
+			}, // 显示字体大小
+			spanColor: {
+				type: String,
+				default: "#f35252"
+			}, // 显示字体颜色
+			inputSize: {
+				type: String,
+				default: "20px"
+			}, //输入框字体大小
+			inputColor: {
+				type: String,
+				default: "#000"
+			}, //输入框字体颜色
+			height: {
+				type: String,
+				default: "40px"
+			},
+			number: {
+				type: Number,
+				default: 6
 			} },
 		data: function data() {
 			return {
 				inputCodeNum: 0, //输入框的位置
 				left: "0", //输入框距离左边的距离
 				inputCode: "", //单次输入的值
-				codeArray: [] };
+				codeArray: [], //输入的值数组
+
+				blockWidth: (100 / this.number).toFixed(4) + '%', //每个格子的宽度
+				blockSize: (100 / this.number).toFixed(4), //计算用宽度
+				block: [], //存放格子
+
+				zIndex: 10 };
 		},
-		created: function created() {},
+		created: function created() {
+			var block = [];
+			for (var i = 0; i < this.number; i++) {
+				block.push(i);
+			}
+			this.block = block; //获取格子数并保持方便循环
+		},
 
 		filters: {},
 		watch: {},
@@ -9811,37 +9843,40 @@
 			deleteInput: function deleteInput() {
 				if (this.inputCodeNum === 5) {
 					this.inputCodeNum--;
-					var n = 16.6666 * this.inputCodeNum;
+					var n = this.blockSize * this.inputCodeNum;
 					this.left = n + "%";
 					this.codeArray.pop();
 					this.code.pop();
+					this.getinput(this.codeString); //回调
 					return;
 				}
 				if (this.inputCodeNum !== 0) {
 					this.inputCodeNum--;
 					this.codeArray.pop();
 					this.code.pop();
-					var _n = 16.5666 * this.inputCodeNum;
+					var _n = this.blockSize * this.inputCodeNum;
 					this.left = _n + "%";
+					this.getinput(this.codeString); //回调
 				}
 			},
 
 			/** 每次输入的事件 */
 			inputCodeEvent: function inputCodeEvent(event) {
+				/** 数字 */
 				if (event.keyCode >= 48 && event.keyCode <= 57) {
 					var code = event.target.value; //code
 
-					if (this.inputCodeNum < 5) {
+					if (this.inputCodeNum < this.number - 1) {
 						this.codeArray.push(code);
 						this.code.push(code);
 						this.inputCode = "";
 						this.inputCodeNum++;
-						var n = 16.5666 * this.inputCodeNum;
+						var n = this.blockSize * this.inputCodeNum;
 						this.left = n + "%";
 
 						this.getinput(this.codeString); //回调
 					} else {
-						if (this.inputCodeNum === 5) {
+						if (this.inputCodeNum === this.number - 1) {
 							this.inputCodeNum++;
 							this.codeArray.push(code);
 							this.code.push(code);
@@ -9850,13 +9885,28 @@
 						}
 					}
 				}
+				/** 字母 */
+				if (event.keyCode >= 65 && event.keyCode <= 81) {
+					this.error(); //调用用户的错误处理函数
+					this.inputCode = "";
+				}
+			},
+
+			/** 失去焦点 */
+			blurInput: function blurInput() {
+				this.zIndex = -10;
+			},
+
+			/** 获得焦点 */
+			focusInput: function focusInput() {
+				this.zIndex = 10;
+				this.$refs.input_code.focus();
 			}
 		}
 	};
 
 /***/ },
-
-/***/ 86:
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -9865,13 +9915,22 @@
 	      "id": "vue_input_code"
 	    }
 	  }, [_c('div', {
-	    staticClass: "input"
+	    staticClass: "input",
+	    style: ({
+	      'height': _vm.height
+	    }),
+	    on: {
+	      "click": _vm.focusInput
+	    }
 	  }, [_c('div', {
 	    class: {
 	      'input-code': true, first: _vm.inputCodeNum === 0, last: _vm.inputCodeNum === 6
 	    },
 	    style: ({
-	      left: _vm.left
+	      left: _vm.left,
+	      'z-index': _vm.zIndex,
+	      'height': _vm.height,
+	      'width': _vm.blockSize - 1 + '%'
 	    })
 	  }, [_c('input', {
 	    directives: [{
@@ -9880,11 +9939,15 @@
 	      value: (_vm.inputCode),
 	      expression: "inputCode"
 	    }],
+	    ref: "input_code",
+	    style: ({
+	      'font-size': _vm.inputSize,
+	      'color': _vm.inputColor
+	    }),
 	    attrs: {
 	      "type": "tel",
 	      "autofocus": "",
-	      "maxlength": "1",
-	      "name": "input1"
+	      "maxlength": "1"
 	    },
 	    domProps: {
 	      "value": (_vm.inputCode)
@@ -9896,56 +9959,29 @@
 	        if (_vm._k($event.keyCode, "delete", [8, 46])) { return null; }
 	        _vm.deleteInput($event)
 	      }],
+	      "blur": _vm.blurInput,
 	      "input": function($event) {
 	        if ($event.target.composing) { return; }
 	        _vm.inputCode = $event.target.value
 	      }
 	    }
-	  })]), _vm._v(" "), _c('span', {
-	    staticClass: "first",
-	    style: ({
-	      'border-left': _vm.inputCodeNum === 0 ? 'none' : ''
-	    }),
-	    domProps: {
-	      "textContent": _vm._s(_vm.codeArray[0] ? _vm.codeArray[0] : '')
-	    }
-	  }), _vm._v(" "), _c('span', {
-	    style: ({
-	      'border-left': _vm.inputCodeNum === 1 ? 'none' : ''
-	    }),
-	    domProps: {
-	      "textContent": _vm._s(_vm.codeArray[1] ? _vm.codeArray[1] : '')
-	    }
-	  }), _vm._v(" "), _c('span', {
-	    style: ({
-	      'border-left': _vm.inputCodeNum === 2 ? 'none' : ''
-	    }),
-	    domProps: {
-	      "textContent": _vm._s(_vm.codeArray[2] ? _vm.codeArray[2] : '')
-	    }
-	  }), _vm._v(" "), _c('span', {
-	    style: ({
-	      'border-left': _vm.inputCodeNum === 3 ? 'none' : ''
-	    }),
-	    domProps: {
-	      "textContent": _vm._s(_vm.codeArray[3] ? _vm.codeArray[3] : '')
-	    }
-	  }), _vm._v(" "), _c('span', {
-	    style: ({
-	      'border-left': _vm.inputCodeNum === 4 ? 'none' : ''
-	    }),
-	    domProps: {
-	      "textContent": _vm._s(_vm.codeArray[4] ? _vm.codeArray[4] : '')
-	    }
-	  }), _vm._v(" "), _c('span', {
-	    staticClass: "last",
-	    style: ({
-	      'border-left': _vm.inputCodeNum === 5 ? 'none' : ''
-	    }),
-	    domProps: {
-	      "textContent": _vm._s(_vm.codeArray[5] ? _vm.codeArray[5] : '')
-	    }
-	  })])])
+	  })]), _vm._v(" "), _vm._l((_vm.block), function(item, index) {
+	    return _c('span', {
+	      class: {
+	        'first': index === 0, 'last': index === _vm.number - 1
+	      },
+	      style: ({
+	        'font-size': _vm.spanSize,
+	        'color': _vm.spanColor,
+	        'height': _vm.height,
+	        'line-height': _vm.height,
+	        'width': _vm.blockWidth
+	      }),
+	      domProps: {
+	        "textContent": _vm._s(_vm.codeArray[index] ? _vm.codeArray[index] : '')
+	      }
+	    })
+	  })], 2)])
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
@@ -9956,5 +9992,4 @@
 	}
 
 /***/ }
-
-/******/ });
+/******/ ]);

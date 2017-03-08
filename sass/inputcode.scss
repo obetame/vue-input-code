@@ -22,9 +22,9 @@
 		position: relative;
 		@include display_flex('row');
 		>div{
-			width:16.6666%;
-			height:40px;
-			line-height:40px;
+			// width:16.6666%;
+			// height:40px;
+			// line-height:40px;
 			border:1px solid #323232;
 			font-weight:900;
 			background-color: white;
@@ -49,14 +49,17 @@
 			position:absolute;
 			top:0;
 			left:0;
-			width:(100%/6);
-			border-right: 1px solid rgb(51, 51, 51) !important;
+			// width:(90%/6);
+			margin-left:1%;
+			// border-right: 1px solid rgb(51, 51, 51) !important;
+			border:none;
+			background:none;
 			@include display_flex("row");
 		}
 		>span{
-			width:(100%/6);
-			height:40px;
-			line-height:40px;
+			// width:(100%/6);
+			// height:40px;
+			// line-height:40px;
 			border:1px solid #323232;
 			font-weight:900;
 			background-color: white;

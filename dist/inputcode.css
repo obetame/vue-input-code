@@ -12,9 +12,6 @@
     -ms-flex-align: center;
         align-items: center; }
     #vue_input_code .input > div {
-      width: 16.6666%;
-      height: 40px;
-      line-height: 40px;
       border: 1px solid #323232;
       font-weight: 900;
       background-color: white; }
@@ -35,8 +32,9 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 16.66667%;
-      border-right: 1px solid #333333 !important;
+      margin-left: 1%;
+      border: none;
+      background: none;
       display: -ms-flexbox;
       display: flex;
       -ms-flex-direction: row;
@@ -46,9 +44,6 @@
       -ms-flex-align: center;
           align-items: center; }
     #vue_input_code .input > span {
-      width: 16.66667%;
-      height: 40px;
-      line-height: 40px;
       border: 1px solid #323232;
       font-weight: 900;
       background-color: white;
