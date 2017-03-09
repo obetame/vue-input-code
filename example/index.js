@@ -6,6 +6,11 @@ new Vue({
 	el:"#app",
 	data:{
 		code:[],
+		code1:[],
+		code2:[],
+		code3:[],
+		code4:[],
+		code5:[],
 		codeString:"",
 		input:""
 	},

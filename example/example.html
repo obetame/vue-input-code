@@ -30,7 +30,12 @@
       display: inline-block;
     }
     #app{
-      padding-top:70px;
+      padding-top:50px;
+    }
+    p{
+      color:#c8c8c8;
+      text-align: center;
+      margin:10px 0;
     }
   </style>
 </head>
@@ -38,11 +43,20 @@
 <body>
   <header class="header"><span>验证码输入</span></header>
 	<div id="app">
-		<vue-input-code span-size="20px" type="number" :number="6" height="50px" span-color="#f35252" input-color="#3498db" input-size="24px" :code="code" :getinput="getInput" :success="success"></vue-input-code>
-    <p style="color:#c8c8c8;text-align: center;">输入完成后回调:{{codeString}}</p>
-    <p style="color:#c8c8c8;text-align: center;">每次输入后回调:{{input}}</p>
+    <p>高度40px</p>
+		<vue-input-code span-size="20px" type="number" :number="6" height="40px" span-color="#000" input-color="#000" input-size="20px" :code="code" :getinput="getInput" :success="success"></vue-input-code>
+    <p>高度60px</p>
+    <vue-input-code span-size="20px" type="number" :number="6" height="60px" span-color="#000" input-color="#000" input-size="20px" :code="code1" :getinput="getInput" :success="success"></vue-input-code>
+    <p>显示颜色</p>
+    <vue-input-code span-size="20px" type="number" :number="6" height="40px" span-color="#f35252" input-color="#3498db" input-size="20px" :code="code2" :getinput="getInput" :success="success"></vue-input-code>
+    <p>字体大小</p>
+    <vue-input-code span-size="20px" type="number" :number="6" height="40px" span-color="#f35252" input-color="#3498db" input-size="26px" :code="code3" :getinput="getInput" :success="success"></vue-input-code>
+    <p>4位验证码</p>
+    <vue-input-code span-size="20px" type="number" :number="4" height="40px" span-color="#f35252" input-color="#3498db" input-size="26px" :code="code4" :getinput="getInput" :success="success"></vue-input-code>
+    <p>11位手机号</p>
+    <vue-input-code span-size="20px" type="number" :number="11" height="40px" span-color="#f35252" input-color="#3498db" input-size="26px" :code="code5" :getinput="getInput" :success="success"></vue-input-code>
 	</div>
-  <script type="text/javascript" src="../example/VueInputCode.js"></script>
+  <script type="text/javascript" src="./VueInputCode.js"></script>
 </body>
 
 </html>
