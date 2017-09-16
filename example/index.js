@@ -24,8 +24,8 @@ new Vue({
 		getInput(code){
 			this.input = code;
 		},
-		error(){
-			console.log("错误输入")
+		error(code){
+			console.log("错误输入:", code)
 		}
 	},
 	components:{

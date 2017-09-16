@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var path = require('path');
-var webpack = require('gulp-webpack');
+var webpack = require('webpack-stream');
 var rename = require('gulp-rename'); //更改名字
 var uglify = require('gulp-uglify'); //js代码压缩
 var sass = require('gulp-sass');
@@ -17,23 +17,23 @@ let modules = {
 		loader: 'babel-loader',
 		exclude: /node_modules/,
 		query: {
-			presets: ['es2015'],
-			plugins: ['transform-runtime']
+			presets: ['es2015', 'stage-3'],
+			plugins: ['transform-runtime', 'transform-es2015-arrow-functions']
 		}
 	}, {
 		//这是处理scss文件
 		test: /\.scss$/,
-		loader: 'style!css!sass'
+		loader: ['style-loader', 'css-loader', 'sass-loader']
 	}, {
 		test: /\.vue$/,
-		loader: "vue"
+		loader: "vue-loader"
 	},{
 		// 这是处理css文件
 		test: /\.css$/,
-		loaders: ["style", "css"]
+		loaders: ['style-loader', 'css-loader']
 	}, {
 		test: /\.(png|jpg|gif)$/,
-		loader: 'url',
+		loader: 'url-loader',
 		query: {
 			// inline files smaller then 10kb as base64 dataURL
 			limit: 10000,
@@ -67,10 +67,27 @@ gulp.task('start', ['sass'], function() {
 			},
 			module: modules,
 			resolve: {
-				extensions: ['', '.js', '.jsx'],
+				extensions: ['.js', '.jsx'],
 				alias: {
-					'vue$': 'vue/dist/vue.js'
+					'vue$': 'vue/dist/vue.min.js'
 				}
+			},
+		}))
+		// .pipe(uglify())//生产的时候再启用压缩
+		.pipe(gulp.dest('dist/'))
+		.pipe(notify("<%= file.relative %> 成功生成!"));
+});
+
+gulp.task('uglify', function() {
+	return gulp.src('./dist/VueInputCode.js')
+		.pipe(webpack({
+			watch: false,
+			output: {
+				filename: 'VueInputCode.min.js'
+			},
+			module: modules,
+			resolve: {
+				extensions: ['.js', '.jsx']
 			},
 		}))
 		.pipe(uglify())//生产的时候再启用压缩
@@ -87,9 +104,9 @@ gulp.task('example', ['sass'], function() {
 			},
 			module: modules,
 			resolve: {
-				extensions: ['', '.js', '.jsx'],
+				extensions: ['.js', '.jsx'],
 				alias: {
-					'vue$': 'vue/dist/vue.js'
+					'vue$': 'vue/dist/vue.min.js'
 				}
 			},
 		}))
