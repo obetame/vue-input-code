@@ -19,7 +19,7 @@
 	</div>
 </template>
 
-<script type="text/babel">
+<script>
 let timer = null;
 
 export default {
@@ -91,12 +91,12 @@ export default {
 			zIndex: 10 //输入框层级(开始默认最高)
 		}
 	},
-	created(){
+	created() {
 		for(let i = 0;i < this.number; i++){
 			this.block.push(i);//获取格子数并保持方便循环
 		}
 	},
-	computed:{
+	computed: {
 		codeString() {
 			let data = "";
 			this.codeArray.map(item => {
@@ -105,7 +105,7 @@ export default {
 			return data;
 		}
 	},
-	methods:{
+	methods: {
 		/** 删除输入 */
 		deleteInput() {
 			if(this.inputCodeNum === this.number - 1) {
@@ -127,7 +127,7 @@ export default {
 		/** 每次输入的事件 */
 		inputCodeEvent(event) {
 			if (!this.inputCode) return;
-			if (this.type === "number" && (event.keyCode < 48 || event.keyCode > 57)) {
+			if (this.type === "number" && isNaN(this.inputCode)) {
 				// 要求输入数字类型
 				if (!this.error(this.inputCode)) {
 					// 没有返回或者返回false就清掉并退出
@@ -137,7 +137,7 @@ export default {
 			}
 			this.upperCase && (this.inputCode = this.inputCode.toUpperCase());
 
-			if(this.inputCodeNum < this.number-1){
+			if(this.inputCodeNum < this.number - 1) {
 				this.codeArray.push(this.inputCode);
 				this.code.push(this.inputCode);
 				this.inputCode = '';
@@ -157,11 +157,11 @@ export default {
 			}
 		},
 		/** 失去焦点 */
-		blurInput(){
+		blurInput() {
 			this.zIndex = -10;
 		},
 		/** 获得焦点 */
-		focusInput(){
+		focusInput() {
 			this.zIndex = 10;
 			this.$refs.input_code.focus();
 		}

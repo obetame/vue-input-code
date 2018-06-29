@@ -71,3 +71,7 @@ HTML中使用:
 | input-color | 字符串 | 输入框的字体显示颜色 | — | #000 |
 | number | 数字 | 验证码个数 | — | 6 |
 | height | 字符串 | 整个框的显示高度 | — | 60px |
+
+## CHANGELOG
+
+- version 1.3.1: fixed [issuse](https://github.com/zhouyuexie/vue-input-code/issues/4) about chinese input method bug.

@@ -748,7 +748,7 @@ exports.default = {
 		/** 每次输入的事件 */
 		inputCodeEvent: function inputCodeEvent(event) {
 			if (!this.inputCode) return;
-			if (this.type === "number" && (event.keyCode < 48 || event.keyCode > 57)) {
+			if (this.type === "number" && isNaN(this.inputCode)) {
 				// 要求输入数字类型
 				if (!this.error(this.inputCode)) {
 					// 没有返回或者返回false就清掉并退出
