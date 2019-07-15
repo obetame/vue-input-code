@@ -160,7 +160,7 @@ var Component = __webpack_require__(8)(
   /* cssModules */
   null
 )
-Component.options.__file = "/Users/quietboy/git/vue-input-code/src/inputcode.vue"
+Component.options.__file = "/Users/yuexie/git/vue-input-code/src/inputcode.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] inputcode.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -773,10 +773,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     },
     on: {
       "keyup": [function($event) {
-        _vm.inputCodeEvent($event)
+        return _vm.inputCodeEvent($event)
       }, function($event) {
-        if (!('button' in $event) && _vm._k($event.keyCode, "delete", [8, 46])) { return null; }
-        _vm.deleteInput($event)
+        if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "delete", [8, 46], $event.key, ["Backspace", "Delete", "Del"])) { return null; }
+        return _vm.deleteInput($event)
       }],
       "blur": _vm.blurInput,
       "input": function($event) {
@@ -806,10 +806,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     },
     on: {
       "keyup": [function($event) {
-        _vm.inputCodeEvent($event)
+        return _vm.inputCodeEvent($event)
       }, function($event) {
-        if (!('button' in $event) && _vm._k($event.keyCode, "delete", [8, 46])) { return null; }
-        _vm.deleteInput($event)
+        if (!$event.type.indexOf('key') && _vm._k($event.keyCode, "delete", [8, 46], $event.key, ["Backspace", "Delete", "Del"])) { return null; }
+        return _vm.deleteInput($event)
       }],
       "blur": _vm.blurInput,
       "input": function($event) {
