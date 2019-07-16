@@ -1,27 +1,45 @@
 <template type="x/template">
 	<div class="vue_input_code">
 		<div class="input" @click="focusInput" :style="{'height':height}">
-      <div class="input-code" :class="{first: inputCodeNum===0, last: inputCodeNum === 6}" :style="{left: left, 'z-index': zIndex, 'height': height, 'width': blockSize - 1 + '%'}">
+      <div
+        class="input-code"
+        :class="{first: inputCodeNum===0, last: inputCodeNum === 6}"
+        :style="{left: left, 'z-index': zIndex, 'height': height, 'width': blockSize - 1 + '%'}">
       	<template v-if="type==='number'">
-      		<input ref="input_code" type="tel" :style="{'font-size': inputSize, 'color': inputColor}" @keyup="inputCodeEvent($event)" @blur="blurInput" v-model="inputCode" autofocus maxlength="1" @keyup.delete="deleteInput">
+      		<input
+            ref="input_code"
+            type="tel"
+            :style="{'font-size': inputSize, 'color': inputColor}"
+            @keyup="inputCodeEvent($event)"
+            @blur="blurInput"
+            v-model="inputCode"
+            autofocus
+            maxlength="1"
+            @keyup.delete="deleteInput">
       	</template>
         <template v-else>
-		  		<input ref="input_code" type="text" :style="{'font-size': inputSize, 'color': inputColor}" @keyup="inputCodeEvent($event)" @blur="blurInput" v-model="inputCode" autofocus maxlength="1" @keyup.delete="deleteInput">
+		  		<input
+            ref="input_code"
+            type="text"
+            :style="{'font-size': inputSize, 'color': inputColor}"
+            @keyup="inputCodeEvent($event)"
+            @blur="blurInput"
+            v-model="inputCode"
+            autofocus maxlength="1"
+            @keyup.delete="deleteInput">
       	</template>
       </div>
-      <span v-for="(item,index) in block" :style="{'font-size': spanSize, 'color': spanColor, 'height': height, 'line-height': height, 'width': blockWidth}" v-text="codeArray[index] ? codeArray[index] : ''" :class="{'first':index === 0, 'last': index === number - 1}"></span>
-      <!-- <span :style="{'font-size':spanSize,'color':spanColor,'height':height,'line-height':height}" v-text="codeArray[1]?codeArray[1]:''"></span>
-      <span :style="{'font-size':spanSize,'color':spanColor,'height':height,'line-height':height}" v-text="codeArray[2]?codeArray[2]:''"></span>
-      <span :style="{'font-size':spanSize,'color':spanColor,'height':height,'line-height':height}" v-text="codeArray[3]?codeArray[3]:''"></span>
-      <span :style="{'font-size':spanSize,'color':spanColor,'height':height,'line-height':height}" v-text="codeArray[4]?codeArray[4]:''"></span>
-      <span :style="{'font-size':spanSize,'color':spanColor,'height':height,'line-height':height}" class="last" v-text="codeArray[5]?codeArray[5]:''"></span> -->
+      <span
+        v-for="(item,index) in block"
+        :key="item"
+        :style="{'font-size': spanSize, 'color': spanColor, 'height': height, 'line-height': height, 'width': blockWidth}"
+        v-text="codeArray[index] ? codeArray[index] : ''"
+        :class="{'first':index === 0, 'last': index === number - 1}"></span>
     </div>
 	</div>
 </template>
 
 <script>
-let timer = null;
-
 export default {
 	props: {
 		code: {

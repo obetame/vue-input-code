@@ -572,8 +572,26 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
-
-var timer = null;
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
 	props: {
@@ -819,6 +837,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })]], 2), _vm._v(" "), _vm._l((_vm.block), function(item, index) {
     return _c('span', {
+      key: item,
       class: {
         'first': index === 0, 'last': index === _vm.number - 1
       },
