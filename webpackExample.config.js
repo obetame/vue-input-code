@@ -1,22 +1,19 @@
 const {VueLoaderPlugin} = require("vue-loader");
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-
-const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
-  entry: './src/index.js',
-  mode: process.env.NODE_ENV || 'development',
+  entry: './example/index.js',
+  mode: 'development',
   output: {
     library: 'VueInputCode',
     libraryTarget: 'umd',
-    path: __dirname + '/dist',
-    filename: 'VueInputCode.js'
+    path: __dirname + '/example',
+    filename: 'app.js'
   },
   resolve: {
-    extensions: ['.js', '.vue', '.css']
-  },
-  externals: {
-    vue: 'Vue'
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js'
+    },
+    extensions: ['*', '.js', '.vue', '.json'],
   },
   module: {
     rules: [{
@@ -51,17 +48,6 @@ module.exports = {
       }
     }]
   },
-  watch: isDev,
-  optimization: {
-    minimizer: [
-      new UglifyJsPlugin({
-        uglifyOptions: {
-          output: {
-            comments: false
-          }
-        }
-      })
-    ]
-  },
+  watch: false,
   plugins: [new VueLoaderPlugin()]
 }

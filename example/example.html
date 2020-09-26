@@ -2,14 +2,15 @@
 <html lang="zh-cn">
 
 <head>
-  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-  <meta content="IE=edge" http-equiv="X-UA-Compatible" />
-  <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
-  <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
-  <META HTTP-EQUIV="Expires" CONTENT="0">
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"
+        name="viewport"/>
+  <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"></META>
+  <META HTTP-EQUIV="Expires" CONTENT="0"></META>
   <title>验证码输入组件</title>
   <style type="text/css">
-    header{
+    header {
       height: 50px;
       background-color: #f35252;
       position: fixed;
@@ -21,7 +22,8 @@
       margin: 0;
       text-align: center;
     }
-    header>span {
+
+    header > span {
       height: 50px;
       line-height: 50px;
       color: white;
@@ -29,67 +31,48 @@
       font-weight: 900;
       display: inline-block;
     }
-    #app{
-      padding-top:50px;
+
+    #app {
+      padding-top: 50px;
     }
-    p{
-      color:#c8c8c8;
+
+    p {
+      color: #c8c8c8;
       text-align: center;
-      margin:10px 0;
+      margin: 10px 0;
     }
   </style>
 </head>
 
 <body>
-  <header class="header"><span>验证码输入</span></header>
-	<div id="app">
-    <p>高度40px</p>
-		<vue-input-code span-size="20px" type="number" :number="6" height="40px" span-color="#000" input-color="#000" input-size="20px" :code="code" :get-input="getInput" :success="success"></vue-input-code>
-    <p>高度60px</p>
-    <vue-input-code span-size="20px" type="number" :number="6" height="60px" span-color="#000" input-color="#000" input-size="20px" :code="code1" :get-input="getInput" :error="error" :success="success"></vue-input-code>
-    <p>显示颜色</p>
-    <vue-input-code span-size="20px" type="number" :number="6" height="40px" span-color="#f35252" input-color="#3498db" input-size="20px" :code="code2" :error="error" :get-input="getInput" :success="success"></vue-input-code>
-    <p>字体大小</p>
-    <vue-input-code span-size="20px" type="number" :number="6" height="40px" span-color="#f35252" input-color="#3498db" input-size="26px" :code="code3" :error="error" :get-input="getInput" :success="success"></vue-input-code>
-    <p>4位验证码大写</p>
-    <vue-input-code span-size="20px" :upper-case="true" type="text" :number="4" height="40px" span-color="#f35252" input-color="#3498db" input-size="26px" :error="error" :code="code4" :get-input="getInput" :success="success"></vue-input-code>
-    <p>11位手机号</p>
-    <vue-input-code span-size="20px" type="number" :number="11" height="40px" span-color="#f35252" input-color="#3498db" input-size="26px" :code="code5" :error="error" :get-input="getInput" :success="success"></vue-input-code>
-	</div>
-  <script type="text/javascript" src="./VueInputCode.js"></script>
-<!--   <script type="text/javascript" src="../node_modules/vue/dist/vue.js"></script>
-  <script type="text/javascript" src="../dist/VueInputCode.js"></script>
-  <script>
-    new Vue({
-      el:"#app",
-      data:{
-        code:[],
-        code1:[],
-        code2:[],
-        code3:[],
-        code4:[],
-        code5:[],
-        codeString:"",
-        input:""
-      },
-      created(){
-        
-      },
-      methods:{
-        success(code){
-          this.codeString = code;
-          console.log(code);
-        },
-        getInput(code){
-          this.input = code;
-        },
-        error(code){
-          console.log("错误输入:",code);
-          return true;
-        }
-      }
-    })
-  </script> -->
+<header class="header"><span>验证码输入</span></header>
+<div id="app">
+  <p>高度40px</p>
+  <vue-input-code span-size="20px" type="number" :number="6" height="40px" span-color="#000"
+                  input-color="#000" input-size="20px" :code="code" :get-input="getInput"
+                  :success="success"></vue-input-code>
+  <p>高度60px</p>
+  <vue-input-code span-size="20px" type="number" :number="6" height="60px" span-color="#000"
+                  input-color="#000" input-size="20px" :code="code1" :get-input="getInput"
+                  :error="error" :success="success"></vue-input-code>
+  <p>显示颜色</p>
+  <vue-input-code span-size="20px" type="number" :number="6" height="40px" span-color="#f35252"
+                  input-color="#3498db" input-size="20px" :code="code2" :error="error"
+                  :get-input="getInput" :success="success"></vue-input-code>
+  <p>字体大小</p>
+  <vue-input-code span-size="20px" type="number" :number="6" height="40px" span-color="#f35252"
+                  input-color="#3498db" input-size="26px" :code="code3" :error="error"
+                  :get-input="getInput" :success="success"></vue-input-code>
+  <p>4位验证码大写</p>
+  <vue-input-code span-size="20px" :upper-case="true" type="text" :number="4" height="40px"
+                  span-color="#f35252" input-color="#3498db" input-size="26px" :error="error"
+                  :code="code4" :get-input="getInput" :success="success"></vue-input-code>
+  <p>11位手机号</p>
+  <vue-input-code span-size="20px" type="number" :number="11" height="40px" span-color="#f35252"
+                  input-color="#3498db" input-size="26px" :code="code5" :error="error"
+                  :get-input="getInput" :success="success"></vue-input-code>
+</div>
+<script type="text/javascript" src="./app.js"></script>
 </body>
 
 </html>
