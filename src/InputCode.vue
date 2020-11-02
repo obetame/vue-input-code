@@ -60,6 +60,10 @@ export default {
       default: () => {
       }
     },
+    customValidate: {
+      type: Function,
+      default: undefined
+    },
     //每次输入都回调
     getInput: {
       type: Function,
@@ -158,24 +162,22 @@ export default {
     },
     /** 每次输入的事件 */
     inputCodeEvent() {
-      if (!this.inputCode) {
+      const checkFn = this.customValidate ? this.customValidate : this.isCodeCorrect
+      const isCorrect = checkFn(this.inputCode)
+
+      if (!isCorrect) {
+        this.error(this.inputCode);
+        this.inputCode = '';
         return;
       }
 
-      const inputCode = this.inputCode.trim();
-      if (this.type === "number" && isNaN(inputCode)) {
-        // 要求输入数字类型
-        if (!this.error(inputCode)) {
-          // 没有返回或者返回false就清掉并退出
-          this.inputCode = '';
-          return;
-        }
+      if (this.upperCase) {
+        this.inputCode = this.inputCode.toUpperCase();
       }
-      this.upperCase && (this.inputCode = inputCode.toUpperCase());
 
       if (this.inputCodeNum < this.number - 1) {
-        this.codeArray.push(inputCode);
-        this.code.push(inputCode);
+        this.codeArray.push(this.inputCode);
+        this.code.push(this.inputCode);
         this.inputCode = '';
         this.inputCodeNum++;
         this.left = (this.blockSize * this.inputCodeNum) + '%';
@@ -184,12 +186,25 @@ export default {
       } else {
         if (this.inputCodeNum === this.number - 1) {
           this.inputCodeNum++;
-          this.codeArray.push(inputCode);
-          this.code.push(inputCode);
+          this.codeArray.push(this.inputCode);
+          this.code.push(this.inputCode);
           this.success(this.codeString);//输入完成后回调
           this.getInput(this.codeString);//回调
         }
       }
+    },
+    isCodeCorrect(code) {
+      if (!code || code === ' ') {
+        return false;
+      }
+      if (this.type === "number" && isNaN(Number(code))) {
+        return false;
+      }
+      if (this.type === 'text') {
+        return true;
+      }
+
+      return true;
     },
     /** 失去焦点 */
     blurInput() {

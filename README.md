@@ -64,7 +64,8 @@ HTML中使用:
 | upper-case | Boolean | 类型为text的时候可调整输入的字符串为大写 | true,false | false |
 | get-input | 函数 | 用户每次输入后的回调函数,接受一个验证码字符串 | — | — |
 | success | 函数 | 用户输入完成后的回调函数,接受一个验证码字符串 | — | — |
-| error | 函数 | 用户输入不是预期的值的回调函数,接收一个错误的值,若返回true则不清除错误值并继续下一个输入,默认返回false | — | — |
+| error | 函数 | 用户输入不是预期的值的回调函数,接收一个错误的值 | — | — |
+| customValidate | 函数 | 自定义判断用户输入值是否正确,判断输入错误则需返回`false`,正确则返回`true`| — | — |
 | span-size | 字符串 | 输入后的字体显示大小 | — | 20px |
 | span-color | 字符串 | 输入后的字体显示颜色 | — | #f35252 |
 | input-size | 字符串 | 输入框的字体显示大小 | — | 20px |
@@ -75,3 +76,4 @@ HTML中使用:
 ## CHANGELOG
 
 - version 1.3.1: fixed [issuse](https://github.com/zhouyuexie/vue-input-code/issues/4) about chinese input method bug.
+- version 1.5.0: add customValidate

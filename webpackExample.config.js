@@ -9,6 +9,7 @@ module.exports = {
     path: __dirname + '/example',
     filename: 'app.js'
   },
+  devtool: 'inline-source-map',
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js'
